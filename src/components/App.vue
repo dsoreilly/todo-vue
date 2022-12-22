@@ -9,8 +9,17 @@
       @disable-edit="disableEdit"
     />
     <TodoItemList :list="items" @enable-edit="enableEdit" />
+    <footer
+      class="my-4 flex flex-col justify-center px-6 text-center text-xs text-slate-500"
+    >
+      <p class="mb-2">Vue-based to-do item list &#128406;</p>
+      <p>
+        <a class="hover:underline" href="https://github.com/dsoreilly/vue-todo">
+          View on GitHub
+        </a>
+      </p>
+    </footer>
   </div>
-  <footer></footer>
 </template>
 
 <script setup>
