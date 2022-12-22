@@ -14,9 +14,15 @@ export const useItemStore = defineStore('item', () => {
     },
     {
       id: nanoid(),
-      text: 'Brew coffee ☕️',
+      text: 'Drink more coffee ☕️',
       tags: [],
       isComplete: true,
+    },
+    {
+      id: nanoid(),
+      text: 'Read Hacker News 🗞',
+      tags: [],
+      isComplete: false,
     },
   ]);
 
