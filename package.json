@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "build": "vite build",
-    "deploy": "npm run build",
+    "deploy": "vite build --base=/todo-vue/",
     "preview": "vite preview",
     "start": "vite"
   },
