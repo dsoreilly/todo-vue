@@ -12,3 +12,4 @@ Vue-based to-do item list :vulcan_salute:
 
 - [ ] Add tags to to-do items
 - [ ] Filter list by tags and status
+- [ ] Write data to `localStorage`
