@@ -18,7 +18,7 @@
 import { useItemStore } from '../stores/item';
 import TodoItem from './TodoItem.vue';
 
-defineEmits(['completeItem', 'enableEdit']);
+defineEmits(['enableEdit']);
 defineProps({
   list: {
     type: Array,
