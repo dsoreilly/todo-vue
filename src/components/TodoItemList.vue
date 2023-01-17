@@ -18,7 +18,7 @@
 
 <script setup>
 import { useItemStore } from '../stores/item';
-import TodoItem from './TodoItem.vue';
+import TodoItem from './partials/TodoItem.vue';
 
 defineEmits(['enableEdit', 'enableRemove', 'filterByTag']);
 defineProps({
