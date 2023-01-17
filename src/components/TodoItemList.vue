@@ -10,6 +10,8 @@
       :is-complete="item.isComplete"
       @complete-item="(isComplete) => completeItem(item.id, isComplete)"
       @enable-edit="$emit('enableEdit', item.id)"
+      @enable-remove="$emit('enableRemove', item.id)"
+      @filter-by-tag="(tag) => $emit('filterByTag', tag)"
     />
   </ul>
 </template>
@@ -18,7 +20,7 @@
 import { useItemStore } from '../stores/item';
 import TodoItem from './TodoItem.vue';
 
-defineEmits(['enableEdit']);
+defineEmits(['enableEdit', 'enableRemove', 'filterByTag']);
 defineProps({
   list: {
     type: Array,

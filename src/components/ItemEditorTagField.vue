@@ -2,7 +2,7 @@
 
 <template>
   <div
-    class="mt-4 flex flex-row flex-wrap rounded-lg bg-slate-200/50 p-3 dark:bg-slate-900/50"
+    class="mt-4 flex flex-row flex-wrap rounded-lg p-3 hover:bg-slate-200/50 hover:dark:bg-slate-900/50"
   >
     <ul v-if="tags.length" class="mr-2 flex flex-row items-center">
       <TodoItemTag
@@ -17,8 +17,9 @@
       v-model="newTag"
       class="flex-grow border-0 bg-transparent p-0 py-1 align-middle text-sm font-semibold lowercase text-slate-700 placeholder:text-slate-500/50 focus:ring-0 dark:text-slate-200"
       type="text"
-      :placeholder="tags.length ? '' : 'tags'"
+      :placeholder="tags.length ? '' : 'New Tag'"
       @keyup.enter="submitNewTag"
+      @keyup.backspace="removeTagAtIndex(tags.length - 1)"
     />
   </div>
 </template>

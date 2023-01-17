@@ -13,21 +13,31 @@
       />
     </div>
     <div class="flex flex-grow flex-col items-start">
-      <div>
-        <p v-if="isComplete" class="mb-2 text-sm text-slate-500">Done! 🎉</p>
-      </div>
       <button @click="$emit('enableEdit')">
         <h2 class="text-left text-2xl font-semibold">{{ text }}</h2>
       </button>
-      <!-- <TodoItemTagList v-if="tags.length" :tags="tags" /> -->
+      <TodoItemTagList
+        v-if="tags.length"
+        :tags="tags"
+        @filter-by-tag="(tag) => $emit('filterByTag', tag)"
+      />
+    </div>
+    <div class="flex flex-col justify-center">
+      <button
+        class="dark:slate-900/50 text-slate-200/50 hover:text-slate-500"
+        @click="$emit('enableRemove')"
+      >
+        <TrashIcon class="h-6 w-6" />
+      </button>
     </div>
   </li>
 </template>
 
 <script setup>
-// import TodoItemTagList from './TodoItemTagList.vue';
+import { TrashIcon } from '@heroicons/vue/24/solid';
+import TodoItemTagList from './TodoItemTagList.vue';
 
-defineEmits(['completeItem', 'enableEdit']);
+defineEmits(['completeItem', 'enableEdit', 'enableRemove', 'filterByTag']);
 defineProps({
   text: {
     type: String,

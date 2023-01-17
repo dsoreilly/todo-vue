@@ -2,9 +2,11 @@
 
 <template>
   <li
-    class="mr-2 flex flex-row items-center whitespace-nowrap rounded-full bg-pink-500/20 py-1 px-3 text-center text-sm font-semibold text-pink-500"
+    class="mr-1 flex flex-row items-center whitespace-nowrap rounded-full bg-pink-500/20 py-1 px-3 text-center text-xs font-semibold tracking-tight text-pink-500"
   >
-    {{ tag }}
+    <button :disabled="isEditable" @click="$emit('filterByTag')">
+      {{ tag }}
+    </button>
     <button
       v-if="isEditable"
       class="ml-1 -mr-2 text-pink-500/60 hover:text-pink-500"
@@ -18,7 +20,7 @@
 <script setup>
 import { XCircleIcon } from '@heroicons/vue/20/solid';
 
-defineEmits(['removeTag']);
+defineEmits(['filterByTag', 'removeTag']);
 defineProps({
   isEditable: {
     type: Boolean,

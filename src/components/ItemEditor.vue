@@ -14,17 +14,18 @@
           </p>
           <div class="flex flex-row">
             <button
-              :disabled="!isEdited || isEmpty"
-              class="mr-4 text-slate-500 hover:text-pink-500 disabled:text-slate-500/50"
-              @click="saveEdit"
-            >
-              <CheckIcon class="h-6 w-6" />
-            </button>
-            <button
-              class="text-slate-500 hover:text-pink-500"
+              class="flex flex-row items-center rounded-full bg-slate-500/10 py-1 px-3 text-sm font-semibold text-slate-500 hover:bg-pink-500/20 hover:text-pink-500"
               @click="$emit('disableEdit')"
             >
-              <XMarkIcon class="h-6 w-6" />
+              Cancel <XCircleIcon class="ml-1 -mr-2 h-5 w-5" />
+            </button>
+            <button
+              :disabled="!isEdited || isEmpty"
+              class="ml-2 flex flex-row items-center rounded-full bg-slate-500/10 py-1 px-3 text-sm font-semibold text-slate-500 hover:bg-pink-500/20 hover:text-pink-500 disabled:bg-slate-500/10 disabled:text-slate-500/50"
+              @click="saveEdit"
+            >
+              {{ isNew ? 'Add' : 'Update' }}
+              <CheckCircleIcon class="ml-1 -mr-2 h-5 w-5" />
             </button>
           </div>
         </div>
@@ -36,7 +37,7 @@
               class="w-full rounded-lg border-0 bg-slate-200/50 text-2xl text-slate-700 placeholder:text-slate-500/50 focus:ring-2 focus:ring-pink-500/50 focus:ring-offset-2 focus:ring-offset-transparent dark:bg-slate-900/50 dark:text-slate-200"
               type="text"
             />
-            <!-- <ItemEditorTagField v-model:tags="editableItem.tags" /> -->
+            <ItemEditorTagField v-model:tags="editableItem.tags" />
           </div>
         </div>
       </div>
@@ -46,9 +47,9 @@
 
 <script setup>
 import { computed, ref } from 'vue';
-import { CheckIcon, XMarkIcon } from '@heroicons/vue/24/outline';
+import { CheckCircleIcon, XCircleIcon } from '@heroicons/vue/20/solid';
 import { useItemStore } from '../stores/item';
-// import ItemEditorTagField from './ItemEditorTagField.vue';
+import ItemEditorTagField from './ItemEditorTagField.vue';
 import { isDifferent } from '../utils';
 
 const emit = defineEmits(['disableEdit']);
