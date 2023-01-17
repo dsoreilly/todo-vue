@@ -33,7 +33,7 @@
 
 <script setup>
 import { CheckCircleIcon, PlusCircleIcon } from '@heroicons/vue/20/solid';
-import AppHeaderTagList from './AppHeaderTagList.vue';
+import AppHeaderTagList from './partials/AppHeaderTagList.vue';
 
 defineEmits(['filterByComplete', 'filterByTag', 'newItem']);
 defineProps({

@@ -49,7 +49,7 @@
 import { computed, ref } from 'vue';
 import { CheckCircleIcon, XCircleIcon } from '@heroicons/vue/20/solid';
 import { useItemStore } from '../stores/item';
-import ItemEditorTagField from './ItemEditorTagField.vue';
+import ItemEditorTagField from './partials/ItemEditorTagField.vue';
 import { isDifferent } from '../utils';
 
 const emit = defineEmits(['disableEdit']);
