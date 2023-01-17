@@ -1,7 +1,4 @@
-/**
- * @format
- * @type {import('tailwindcss').Config}
- */
+/** @format */
 
 module.exports = {
   content: ['./index.html', './src/**/*.vue'],

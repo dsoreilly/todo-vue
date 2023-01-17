@@ -1,7 +1,4 @@
-/**
- * @format
- * @type {import('vite').UserConfig}
- */
+/** @format */
 
 import vue from '@vitejs/plugin-vue';
 
