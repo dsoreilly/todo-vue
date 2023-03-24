@@ -30,7 +30,7 @@
     "vite": "^4.0.4"
   },
   "dependencies": {
-    "@heroicons/vue": "^2.0.13",
+    "@heroicons/vue": "^2.0.16",
     "nanoid": "^4.0.1",
     "pinia": "^2.0.28",
     "vue": "^3.2.41"
