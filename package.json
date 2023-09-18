@@ -31,7 +31,7 @@
   },
   "dependencies": {
     "@heroicons/vue": "^2.0.18",
-    "nanoid": "^4.0.2",
+    "nanoid": "^5.0.1",
     "pinia": "^2.1.6",
     "vue": "^3.2.41"
   }
