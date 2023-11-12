@@ -1,32 +1,22 @@
 {
-  "name": "todo-vue",
-  "version": "1.0.0",
   "private": true,
   "scripts": {
+    "start": "vite",
     "build": "vite build",
-    "deploy": "vite build --base=/todo-vue/",
-    "preview": "vite preview",
-    "start": "vite"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/dsoreilly/todo-vue.git"
-  },
-  "license": "MIT",
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.6",
-    "@vitejs/plugin-legacy": "^4.1.1",
+    "@tsconfig/recommended": "^1.0.3",
     "@vitejs/plugin-vue": "^4.4.0",
-    "autoprefixer": "^10.4.16",
     "eslint": "^8.53.0",
     "eslint-config-prettier": "^9.0.0",
-    "eslint-plugin-prettier": "^5.0.1",
     "eslint-plugin-vue": "^9.18.1",
     "postcss": "^8.4.31",
+    "postcss-preset-env": "^9.3.0",
     "prettier": "^3.0.3",
     "prettier-plugin-tailwindcss": "^0.5.6",
     "tailwindcss": "^3.3.5",
-    "terser": "^5.24.0",
     "vite": "^4.5.0"
   },
   "dependencies": {

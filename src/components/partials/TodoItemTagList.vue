@@ -1,5 +1,3 @@
-<!-- @format -->
-
 <template>
   <ul class="mt-4 flex flex-row">
     <TodoItemTag
@@ -12,9 +10,9 @@
 </template>
 
 <script setup>
-import TodoItemTag from './TodoItemTag.vue';
+import TodoItemTag from "./TodoItemTag.vue";
 
-defineEmits(['filterByTag']);
+defineEmits(["filterByTag"]);
 defineProps({
   tags: {
     type: Array,

@@ -1,5 +1,3 @@
-<!-- @format -->
-
 <template>
   <div
     class="mt-4 flex flex-row flex-wrap rounded-lg p-3 hover:bg-slate-200/50 hover:dark:bg-slate-900/50"
@@ -25,27 +23,27 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
-import TodoItemTag from './TodoItemTag.vue';
+import { ref } from "vue";
+import TodoItemTag from "./TodoItemTag.vue";
 
-const emit = defineEmits(['update:tags']);
+const emit = defineEmits(["update:tags"]);
 const props = defineProps({
   tags: {
     type: Array,
     default: () => [],
   },
 });
-const newTag = ref('');
+const newTag = ref("");
 
 function removeTagAtIndex(index) {
   const newTags = [...props.tags];
   newTags.splice(index, 1);
-  emit('update:tags', newTags);
+  emit("update:tags", newTags);
 }
 
 function submitNewTag(event) {
   const newTags = [...props.tags, event.target.value];
-  newTag.value = '';
-  emit('update:tags', newTags);
+  newTag.value = "";
+  emit("update:tags", newTags);
 }
 </script>
