@@ -1,6 +1,4 @@
-/** @format */
-
-const STORAGE_KEY = 'todo-items';
+const STORAGE_KEY = "todo-items";
 
 /**
  * Checks if an array has all of the values of another array.

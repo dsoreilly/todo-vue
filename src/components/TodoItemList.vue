@@ -1,5 +1,3 @@
-<!-- @format -->
-
 <template>
   <ul class="my-4 flex w-full flex-col">
     <TodoItem
@@ -17,10 +15,10 @@
 </template>
 
 <script setup>
-import { useItemStore } from '../stores/item';
-import TodoItem from './partials/TodoItem.vue';
+import { useItemStore } from "../stores/item";
+import TodoItem from "./partials/TodoItem.vue";
 
-defineEmits(['enableEdit', 'enableRemove', 'filterByTag']);
+defineEmits(["enableEdit", "enableRemove", "filterByTag"]);
 defineProps({
   list: {
     type: Array,

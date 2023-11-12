@@ -1,8 +1,6 @@
-<!-- @format -->
-
 <template>
   <div
-    class="fixed top-0 left-0 flex h-screen w-screen flex-col items-center justify-center bg-slate-200/50 backdrop-blur dark:bg-slate-900/50"
+    class="fixed left-0 top-0 flex h-screen w-screen flex-col items-center justify-center bg-slate-200/50 backdrop-blur dark:bg-slate-900/50"
   >
     <div class="w-full max-w-5xl px-4">
       <div
@@ -14,18 +12,18 @@
           </p>
           <div class="flex flex-row">
             <button
-              class="flex flex-row items-center rounded-full bg-slate-500/10 py-1 px-3 text-sm font-semibold text-slate-500 hover:bg-pink-500/20 hover:text-pink-500"
+              class="flex flex-row items-center rounded-full bg-slate-500/10 px-3 py-1 text-sm font-semibold text-slate-500 hover:bg-pink-500/20 hover:text-pink-500"
               @click="$emit('disableEdit')"
             >
-              Cancel <XCircleIcon class="ml-1 -mr-2 h-5 w-5" />
+              Cancel <XCircleIcon class="-mr-2 ml-1 h-5 w-5" />
             </button>
             <button
               :disabled="!isEdited || isEmpty"
-              class="ml-2 flex flex-row items-center rounded-full bg-slate-500/10 py-1 px-3 text-sm font-semibold text-slate-500 hover:bg-pink-500/20 hover:text-pink-500 disabled:bg-slate-500/10 disabled:text-slate-500/50"
+              class="ml-2 flex flex-row items-center rounded-full bg-slate-500/10 px-3 py-1 text-sm font-semibold text-slate-500 hover:bg-pink-500/20 hover:text-pink-500 disabled:bg-slate-500/10 disabled:text-slate-500/50"
               @click="saveEdit"
             >
-              {{ isNew ? 'Add' : 'Update' }}
-              <CheckCircleIcon class="ml-1 -mr-2 h-5 w-5" />
+              {{ isNew ? "Add" : "Update" }}
+              <CheckCircleIcon class="-mr-2 ml-1 h-5 w-5" />
             </button>
           </div>
         </div>
@@ -46,13 +44,13 @@
 </template>
 
 <script setup>
-import { computed, ref } from 'vue';
-import { CheckCircleIcon, XCircleIcon } from '@heroicons/vue/20/solid';
-import { useItemStore } from '../stores/item';
-import ItemEditorTagField from './partials/ItemEditorTagField.vue';
-import { isDifferent } from '../utils';
+import { computed, ref } from "vue";
+import { CheckCircleIcon, XCircleIcon } from "@heroicons/vue/20/solid";
+import { useItemStore } from "../stores/item";
+import ItemEditorTagField from "./partials/ItemEditorTagField.vue";
+import { isDifferent } from "../utils";
 
-const emit = defineEmits(['disableEdit']);
+const emit = defineEmits(["disableEdit"]);
 const props = defineProps({
   id: {
     type: String,
@@ -62,10 +60,10 @@ const props = defineProps({
 
 const store = useItemStore();
 const isNew = !props.id.length;
-const emptyItem = { text: '', tags: [], isComplete: false };
+const emptyItem = { text: "", tags: [], isComplete: false };
 
 const editableItem = ref(
-  isNew ? { ...emptyItem } : { ...store.getItemById(props.id) }
+  isNew ? { ...emptyItem } : { ...store.getItemById(props.id) },
 );
 
 const isEdited = computed(() => {
@@ -74,7 +72,7 @@ const isEdited = computed(() => {
 });
 const isEmpty = computed(() => !editableItem.value.text.length);
 const statusMessage = computed(() =>
-  isNew ? 'New ✨' : editableItem.value.isComplete ? 'Done! 🎉' : 'To-do... ⏳'
+  isNew ? "New ✨" : editableItem.value.isComplete ? "Done! 🎉" : "To-do... ⏳",
 );
 
 function saveEdit() {
@@ -83,6 +81,6 @@ function saveEdit() {
   } else {
     store.updateItem(props.id, editableItem.value);
   }
-  emit('disableEdit');
+  emit("disableEdit");
 }
 </script>

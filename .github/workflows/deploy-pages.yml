@@ -46,7 +46,7 @@ jobs:
         uses: actions/upload-pages-artifact@v1
         with:
           # Upload dist directory
-          path: './dist'
+          path: "./dist"
 
   # Deployment job
   deploy:

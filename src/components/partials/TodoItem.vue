@@ -1,5 +1,3 @@
-<!-- @format -->
-
 <template>
   <li
     class="mb-4 flex flex-row rounded bg-slate-50 p-6 text-slate-700 dark:bg-slate-800 dark:text-slate-200"
@@ -34,14 +32,14 @@
 </template>
 
 <script setup>
-import { TrashIcon } from '@heroicons/vue/24/solid';
-import TodoItemTagList from './TodoItemTagList.vue';
+import { TrashIcon } from "@heroicons/vue/24/solid";
+import TodoItemTagList from "./TodoItemTagList.vue";
 
-defineEmits(['completeItem', 'enableEdit', 'enableRemove', 'filterByTag']);
+defineEmits(["completeItem", "enableEdit", "enableRemove", "filterByTag"]);
 defineProps({
   text: {
     type: String,
-    default: '',
+    default: "",
   },
   tags: {
     type: Array,

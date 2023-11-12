@@ -1,5 +1,3 @@
-<!-- @format -->
-
 <template>
   <div class="mx-auto max-w-5xl px-4">
     <AppHeader
@@ -27,7 +25,7 @@
     <footer
       class="my-4 flex flex-col justify-center px-6 text-center text-xs text-slate-500"
     >
-      <p class="mb-2">Vue-based to-do item list &#128406;</p>
+      <p class="mb-2">Vue based to-do item list &#128406;</p>
       <p>
         <a class="hover:underline" href="https://github.com/dsoreilly/vue-todo">
           View on GitHub
@@ -38,22 +36,22 @@
 </template>
 
 <script setup>
-import { computed, ref } from 'vue';
-import { storeToRefs } from 'pinia';
-import { useItemStore } from '../stores/item';
-import { writeStorage } from '../utils';
-import AppHeader from './AppHeader.vue';
-import ItemEditor from './ItemEditor.vue';
-import ItemRemoveConfirm from './ItemRemoveConfirm.vue';
-import TodoItemList from './TodoItemList.vue';
+import { computed, ref } from "vue";
+import { storeToRefs } from "pinia";
+import { useItemStore } from "../stores/item";
+import { writeStorage } from "../utils";
+import AppHeader from "./AppHeader.vue";
+import ItemEditor from "./ItemEditor.vue";
+import ItemRemoveConfirm from "./ItemRemoveConfirm.vue";
+import TodoItemList from "./TodoItemList.vue";
 
 const store = useItemStore();
 const { items } = storeToRefs(store);
 const filteredItems = computed(() => store.getFilteredItems(itemFilter.value));
 const isEditing = ref(false);
 const isRemoving = ref(false);
-const itemToEditId = ref('');
-const itemToRemoveId = ref('');
+const itemToEditId = ref("");
+const itemToRemoveId = ref("");
 
 const itemFilter = ref({
   isComplete: false,
@@ -61,7 +59,7 @@ const itemFilter = ref({
 });
 
 const isFiltered = computed(
-  () => itemFilter.value.isComplete || itemFilter.value.tags.length
+  () => itemFilter.value.isComplete || itemFilter.value.tags.length,
 );
 
 store.$subscribe(() => {
@@ -69,12 +67,12 @@ store.$subscribe(() => {
 });
 
 function disableEdit() {
-  itemToEditId.value = '';
+  itemToEditId.value = "";
   isEditing.value = false;
 }
 
 function disableRemove() {
-  itemToRemoveId.value = '';
+  itemToRemoveId.value = "";
   isRemoving.value = false;
 }
 
@@ -95,7 +93,7 @@ function filterByComplete() {
 function filterByTag(tag) {
   if (itemFilter.value.tags.includes(tag)) {
     itemFilter.value.tags = itemFilter.value.tags.filter(
-      (existingTag) => existingTag !== tag
+      (existingTag) => existingTag !== tag,
     );
   } else {
     itemFilter.value.tags = [tag, ...itemFilter.value.tags];

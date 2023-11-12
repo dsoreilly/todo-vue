@@ -1,16 +1,7 @@
-/** @format */
+import vue from "@vitejs/plugin-vue";
 
-import legacy from '@vitejs/plugin-legacy';
-import vue from '@vitejs/plugin-vue';
-
+/** @type {import("vite").UserConfig} */
 export default {
-  plugins: [
-    legacy({
-      targets: ['defaults', 'not IE 11'],
-    }),
-    vue(),
-  ],
-  server: {
-    port: 8080,
-  },
+  base: "/todo-vue/",
+  plugins: [vue()],
 };
