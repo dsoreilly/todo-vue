@@ -1,7 +1,13 @@
 {
   "compilerOptions": {
     "allowJs": true,
-    "checkJs": true
+    "allowSyntheticDefaultImports": true,
+    "checkJs": true,
+    "isolatedModules": true,
+    "noEmit": true
   },
-  "extends": ["@tsconfig/recommended/tsconfig.json"]
+  "extends": [
+    "@tsconfig/recommended/tsconfig.json",
+    "@vue/tsconfig/tsconfig.json"
+  ]
 }
