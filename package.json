@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "@heroicons/vue": "^2.1.1",
-    "nanoid": "^5.0.4",
+    "nanoid": "^5.0.5",
     "pinia": "^2.1.7",
     "vue": "^3.4.15"
   }
