@@ -1,6 +1,6 @@
 # todo-vue
 
-[Vue](https://vuejs.org/) based to-do list :vulcan_salute:
+[Vue](https://vuejs.org/) based to-do list app. :vulcan_salute:
 
 ## Features
 
