@@ -12,7 +12,7 @@
       </h1>
       <div class="flex flex-row gap-3">
         <button
-          :disabled="firstTodoItem.description.length === 0"
+          :disabled="firstTodoItem && firstTodoItem.description.length === 0"
           class="rounded-md bg-white px-3 py-2 text-sm font-semibold text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 hover:bg-slate-50 disabled:hover:bg-white dark:bg-slate-900 dark:text-white dark:ring-slate-700 dark:hover:bg-slate-800 dark:disabled:hover:bg-slate-900"
           type="button"
           @click="todoItemsStore.addTodoItem()"

@@ -26,7 +26,9 @@ const INITIAL_TODO_ITEMS = [
 ];
 
 export const useTodoItemsStore = defineStore("todo-items", () => {
-  // STATE
+  /**
+   * STATE
+   */
 
   /**
    * Persist to-do items state to local storage.
@@ -34,7 +36,9 @@ export const useTodoItemsStore = defineStore("todo-items", () => {
 
   const todoItems = useLocalStorage("todo-items", INITIAL_TODO_ITEMS);
 
-  // GETTERS
+  /**
+   * GETTERS
+   */
 
   const firstTodoItem = computed(() => todoItems.value[0]);
 
@@ -42,7 +46,9 @@ export const useTodoItemsStore = defineStore("todo-items", () => {
     todoItems.value.filter((todoItem) => todoItem.isCompleted),
   );
 
-  // ACTIONS
+  /**
+   * ACTIONS
+   */
 
   function addTodoItem() {
     console.log("addTodoItem() called");
