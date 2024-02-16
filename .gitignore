@@ -1,3 +1,23 @@
+# builds
+dist/
+
+# ESLint
+.eslintcache
+
+# logs
+*.log
+
+# macOS
 .DS_Store
-dist
-node_modules
+.fseventsd
+
+# Node
+.node_repl_history
+.npm
+node_modules/
+npm-debug.log*
+
+# VSCode
+.vscode/
+!.vscode/extensions.json
+!.vscode/settings.json
