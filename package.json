@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "@heroicons/vue": "^2.1.5",
-    "@vueuse/core": "^10.11.0",
+    "@vueuse/core": "^10.11.1",
     "nanoid": "^5.0.7",
     "pinia": "^2.2.0",
     "vue": "^3.4.35"
