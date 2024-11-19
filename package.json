@@ -4,7 +4,7 @@
     "@vueuse/core": "^11.2.0",
     "nanoid": "^5.0.8",
     "pinia": "^2.2.6",
-    "vue": "^3.5.12"
+    "vue": "^3.5.13"
   },
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.9",
