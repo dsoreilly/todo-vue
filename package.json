@@ -11,7 +11,7 @@
     "@tsconfig/recommended": "^1.0.8",
     "@vitejs/plugin-vue": "^5.2.3",
     "@vue/tsconfig": "^0.7.0",
-    "eslint": "^9.21.0",
+    "eslint": "^9.26.0",
     "eslint-config-prettier": "^10.1.2",
     "eslint-plugin-vue": "^10.1.0",
     "postcss": "^8.5.1",
